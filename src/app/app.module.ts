@@ -21,7 +21,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
-import { CheckoutFormComponent } from './checkout-form/checkout-form.component'; // Importing FormsModule
+import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
+import { CountdownComponent } from './countdown/countdown.component'; // Importing FormsModule
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
     ProductDialogComponent,
     ContactUsFormComponent,
     CartPageComponent,
-    CheckoutFormComponent
+    CheckoutFormComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

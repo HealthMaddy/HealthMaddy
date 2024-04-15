@@ -1,0 +1,33 @@
+.wrapper {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+}
+
+.container {
+    color: #fff;
+    margin: 20rem auto;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 4.5rem;
+    margin: 30% 0px;
+    color: red;
+
+}
