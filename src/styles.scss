@@ -2,7 +2,7 @@ $white: #101010;
 $black: #000000;
 $primary1: #0a0a0a;
 $primary3: #171515;
-$primary2: #060a36;
+$primary2: black;
 $textCol: #999;
 
 @mixin main-font {
@@ -437,7 +437,7 @@ a:focus {
     display: inline-block;
     padding: 10px 65px;
     background-color: #ffffff;
-    color: #060a36;
+    color: black;
     border-radius: 5px;
     text-transform: uppercase;
     font-size: 15px;
@@ -477,7 +477,7 @@ a:focus {
         flex-wrap: wrap;
 
         button {
-          @include hero_btn($white, #060a36, 10px, 65px, 5px);
+          @include hero_btn($white, black, 10px, 65px, 5px);
           text-transform: uppercase;
         }
 
@@ -1062,7 +1062,7 @@ a:focus {
   right: 10px;
   width: 35px;
   height: 35px;
-  background-color: #060a36;
+  background-color: black;
   border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1076,7 +1076,7 @@ a:focus {
 }
 
 .product_section .product_container .box .detail-box {
-  background-color: #060a36;
+  background-color: black;
   width: 100%;
   padding: 15px;
   display: -webkit-box;
@@ -1155,7 +1155,7 @@ a:focus {
 }
 
 .about_section {
-  background-color: #060a36;
+  background-color: black;
 }
 
 .about_section .row {
@@ -1327,7 +1327,7 @@ a:focus {
   display: inline-block;
   padding: 10px 65px;
   background-color: #ed0c0c;
-  color: #060a36;
+  color: black;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: 15px;
