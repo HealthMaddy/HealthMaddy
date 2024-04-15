@@ -1,0 +1,108 @@
+/* login.component.css */
+.login-container {
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 227px;
+    // border: 1px solid #ccc;
+    // border-radius: 5px;
+    // background-color: #0a0a0a00;
+    // background-image: url('./../../assets/svg/logo.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-color: rgba(255, 255, 255, 0); /* This will make the background color semi-transparent white */
+    // z-index: 14.1;
+  }
+ 
+// .login-container[_ngcontent-tym-c4] {
+//   max-width: 100vh;
+//   margin: 0 auto;
+//   padding: 227px;
+//   /* border: 1px solid #ccc; */
+//   border-radius: 5px;
+//   /* background-color: #721e6814; */
+//   /* background-image: url(logo.svg); */
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   z-index: 14.1;
+// }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    width: 46%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 98px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .social-login {
+    margin-top: 20px;
+  }
+  
+  .social-login p {
+    text-align: center;
+  }
+  
+  .social-login button {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 23px;
+  }
+//   .social-login[_ngcontent-kdp-c4] button[_ngcontent-kdp-c4] {
+//     width: 40%;
+//     padding: 10px;
+//     font-size: 16px;
+//     border: none;
+//     border-radius: 5px;
+//     margin-left: 23px;
+//     cursor: pointer;
+// }
+  .social-login button:first-child {
+    margin-right: 10px;
+    background-color: #3b5998; /* Facebook color */
+    color: #fff;
+  }
+  
+  .social-login button:last-child {
+    background-color: #dd4b39; /* Google color */
+    color: #fff;
+  }
+  
+  .social-login button:first-child:hover {
+    background-color: #2d4373; /* Darker Facebook color */
+  }
+  
+  .social-login button:last-child:hover {
+    background-color: #c32f27; /* Darker Google color */
+  }
+  

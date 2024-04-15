@@ -1,0 +1,13 @@
+<form class="form">
+    <h2>CONTACT US</h2>
+    <p type="First Name "> <input placeholder="Write your name here.." [(ngModel)]=" firstName"></p>
+    <p type="Last Name  "><input placeholder="Write your name here.." [(ngModel)]="LastName"></p>
+
+    <p type="Email  "><input placeholder="Let us know how to email you back.." [(ngModel)]="email"></p>
+    <p type="Contact Number  "><input placeholder="Let us know how to contact you back.." [(ngModel)]="contactNo"></p>
+
+    <p type="Description  "><input placeholder="What would you like to tell us.." [(ngModel)]="Description"></p>
+    <button  class="btn_default_styl"(click)="sendMessage()">Send Message</button>
+    
+  </form>
+  
