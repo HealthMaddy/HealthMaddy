@@ -1,9 +1,10 @@
-<section style="padding: 59px;"id="services" class="services section-bg">
-  <div class="container-fluid">
-    <div class="col-sm-12 text-center mb-4">
-    </div>
-     <div class="row row-sm">
-        <div class="col-md-6 _boxzoom">
+<section style="padding: 59px;" id="services" class="services section-bg">
+   <ng-container *ngIf="!isLoading">
+      <div class="container-fluid">
+         <div class="col-sm-12 text-center mb-4">
+         </div>
+         <div class="row row-sm " style="justify-content: space-between;">
+            <!-- <div class="col-md-6 _boxzoom col-sm-12">
            <div class="zoom-thumb">
               <ul class="piclist">
                  <li><img src="assets/images/p1.png" alt=""></li>
@@ -17,13 +18,35 @@
                  <img class="my_img" src="assets/images/p1.png" alt="">
               </div>
            </div>
-        </div>
-        <div class="col-md-6">
-           <div class="_product-detail-content">
-              <p class="_p-name" style="color: white;"> Milton Bottle </p>
-              <div class="_p-price-box">
-                 <div class="p-list">
-                  <div  id="full-stars-example-two">
+        </div> -->
+
+            <!-- <div class="container"> -->
+            <div class="row col-md-6 col-sm-12 col-lg-4 ">
+               <div class="col-1">
+
+                  <ul class="piclist col-md-6 col-sm-12 col-lg-4">
+                     <li *ngFor='let media of productService.getSecondaryImageList(product?.media)'
+                        (click)="setPrimaryMedia(media.url)"><img [src]="media.url" alt=""></li>
+
+                  </ul>
+               </div>
+               <div class="col-4" style="margin-left: 15%; ">
+                  <!-- <lib-ngx-image-zoom class="my_img" style="width: 400%;
+               height: 78vh;" [thumbImage]="productPrimaryMedia"  zoomMode='hover'
+                  [enableLens] ="true" [maxZoomRatio]="2"></lib-ngx-image-zoom> -->
+                  <img class="my_img" src="{{productPrimaryMedia}}" alt="" style="width: 400%;
+             height: 78vh;">
+               </div>
+
+            </div>
+
+            <!-- </div> -->
+            <div class="col-md-6 col-sm-12 col-lg-5" style="float: right;">
+               <div class="_product-detail-content">
+                  <p class="_p-name" style="color: white;">{{product?.name}} </p>
+                  <div class="_p-price-box">
+                     <div class="p-list">
+                        <!-- <div  id="full-stars-example-two">
                     <div class="rating-group">
                         <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
                         <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
@@ -39,139 +62,117 @@
                     </div>
                   <p class="desc" style="font-family: sans-serif; font-size:0.9rem"><br/>
                    41 Reviews</p>
-                </div>
-                    <span style="color: white;"> M.R.P. : <i class="fa fa-inr"></i> <del> 1399  </del>   </span>
-                    <span class="price"> Rs. 699 </span>
-                 </div>
-                 <div class="_p-add-cart">
+                </div> -->
+                        <span style="color: white;"> <del style="color:red"> {{ product?.originalPrice | currency:
+                              product?.currency}} </del> </span>
+
+                        <span class="price">{{ product?.discountPrice| currency: product?.currency }} </span><br>
+                        <span>Discount: {{product?.discountAmount}}{{product?.discountUnit}}</span>
+                     </div>
+
+                     <div class="">
+                        <!-- unit realted information -->
+
+                        weight: {{product?.weight}}{{product?.unit}}
+
+                        , {{product?.perContainerServing}} Servings
+
+                     </div>
+                     <select class="form-select w-50 marginTB2" aria-label="Default select example">
+                        <option selected>Flavours </option>
+
+                        <option *ngFor="let flavour of product?.stock" value="flavour">{{flavour?.flavourName}}</option>
+
+                     </select>
+
+                     <!-- <div class="_p-add-cart">
                     <div class="_p-qty">
                        <span style="color: white;">Add Quantity</span>
                        <div class="value-button decrease_" id="" value="Decrease Value">-</div>
                        <input type="number" name="qty" id="number" value="1" />
                        <div class="value-button increase_" id="" value="Increase Value">+</div>
                     </div>
-                 </div>
-                 <div class="_p-features" style="color: white;">
-                    <span style="color: white;"> Description About this product:- </span>
-                    Solid color polyester/linen full blackout thick sunscreen floor curtain
-                    Type: General Pleat
-                    Applicable Window Type: Flat Window
-                    Format: Rope
-                    Opening and Closing Method: Left and Right Biparting Open
-                    Processing Accessories Cost: Included
-                    Installation Type: Built-in
-                    Function: High Shading(70%-90%)
-                    Material: Polyester / Cotton
-                    Style: Classic
-                    Pattern: Embroidered
-                    Location: Window
-                    Technics: Woven
-                    Use: Home, Hotel, Hospital, Cafe, Office
-                    Feature: Blackout, Insulated, Flame Retardant
-                    Place of Origin: India
-                    Name: Curtain
-                    Usage: Window Decoration
-                    Keywords: Ready Made Blackout Curtain                        
-                 </div>
-                 <form action="" method="post" accept-charset="utf-8">
-                    <ul class="spe_ul"></ul>
-                    <div class="_p-qty-and-cart">
-                       <div class="_p-add-cart">
-                          <button class="btn-theme btn buy-btn" tabindex="0">
-                          <i class="fa fa-shopping-cart"></i> Buy Now
-                          </button>
-                          <button class="btn-theme btn btn-success" tabindex="0">
-                          <i class="fa fa-shopping-cart"></i> Add to Cart
-                          </button>
-                          <input type="hidden" name="pid" value="18" />
-                          <input type="hidden" name="price" value="850" />
-                          <input type="hidden" name="url" value="" />    
-                       </div>
-                    </div>
-                 </form>
-                 
-              </div>
-              
-           </div>
-          
-          <div >
+                 </div> -->
 
-          
-          <button type="button" class="btn btn-primary " (click)="toggleDescription()">Product Description</button>
-          <button type="button" class="btn btn-primary " (click)="starRating()">Review</button>
-         
-        </div>
-      </div>
-     </div>
-  </div>
-  <div *ngIf="isDescriptionVisible" >
-    <div class="row">
-      <div class="col-md-6">
-        <div class="_product-detail-content-2">
-          <strong> Nike Sneaker Orange & Gray</strong> 
-          <p class="_p-name" style="color: white;">
-          
- 
+                     <!-- flavours dropdown -->
+                     <div class="_p-features" style="color: white;">
+                        <span style="color: white;"> Description About this product:- </span>
+                        {{product?.description }}
+                     </div>
+                     <form action="" method="post" accept-charset="utf-8">
+                        <ul class="spe_ul"></ul>
+                        <div class="_p-qty-and-cart">
 
-            The Nike Sneaker in Orange & Gray is a stylish and comfortable footwear option for both men and women. With its vibrant orange and gray color combination, this sneaker stands out from the crowd and adds a pop of color to any outfit.
-            
-            Designed with performance in mind, this Nike sneaker features a lightweight and breathable upper that keeps your feet cool and dry during intense workouts or everyday activities. The durable construction ensures long-lasting wear, making it suitable for various sports activities or casual wear.
-            
-            The shoe's cushioned midsole provides excellent shock absorption, reducing the impact on your feet and joints while providing all-day comfort. The rubber outsole offers reliable traction on various surfaces, allowing you to move with confidence.
-            
-            Featuring Nike's iconic Swoosh logo on the sides, these sneakers showcase the brand's commitment to quality and style. The lace-up closure allows for a secure fit and easy adjustments according to your preference.
-            
-            Whether you're hitting the gym, going for a run, or simply running errands around town, the Nike Sneaker in Orange & Gray is a versatile choice that combines fashion and functionality effortlessly. </p>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  <p  *ngIf="isDescriptionVisible"style="color: black;">
-    
-    <!-- Nike Sneaker Orange & Gray
+                           <div class="_p-add-cart-2" style="display:flex" *ngIf="product?.isInAppPurchaseAvailable">
+                              <button type="button" class="btn btn-success btn_default_styl  w-50 ">Buy On
+                                 Amazon</button>
+                              <button type="button" class="btn btn-success btn_default_styl  w-50">Buy On
+                                 Amazon</button>
+                           </div>
 
-Nike Sneaker Orange & Gray
- 
+                           <div class="_p-add-cart" *ngIf="!product?.isInAppPurchaseAvailable">
+                              <a target="_blank" [href]="product?.thirdPartyProductLink">
+                                 <button type="button" class="btn btn-success btn_default_styl float-right w-100">Buy On
+                                    Amazon</button>
+                              </a>
+                           </div>
+                        </div>
+                     </form>
 
-The Nike Sneaker in Orange & Gray is a stylish and comfortable footwear option for both men and women. With its vibrant orange and gray color combination, this sneaker stands out from the crowd and adds a pop of color to any outfit.
+                  </div>
 
-Designed with performance in mind, this Nike sneaker features a lightweight and breathable upper that keeps your feet cool and dry during intense workouts or everyday activities. The durable construction ensures long-lasting wear, making it suitable for various sports activities or casual wear.
+               </div>
 
-The shoe's cushioned midsole provides excellent shock absorption, reducing the impact on your feet and joints while providing all-day comfort. The rubber outsole offers reliable traction on various surfaces, allowing you to move with confidence.
+               <!-- <div>
 
-Featuring Nike's iconic Swoosh logo on the sides, these sneakers showcase the brand's commitment to quality and style. The lace-up closure allows for a secure fit and easy adjustments according to your preference.
+               <button type="button" class="btn btn-primary " (click)="starRating()">Review</button>
 
-Whether you're hitting the gym, going for a run, or simply running errands around town, the Nike Sneaker in Orange & Gray is a versatile choice that combines fashion and functionality effortlessly. -->
-  </p>
- 
-
-
-  <div *ngIf="starsRating" >
-    <div class="row">
-      <div class="col-md-6">
-        <div class="_product-detail-content-2">
-          <p class="_p-name" style="color: white;">Over All Rating </p>
-          <div id="full-stars-example-two">
-            <div class="rating-group">
-              <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
-              <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-              <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
-              <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-              <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
-              <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-              <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
-              <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-              <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
-              <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-              <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+            </div> -->
             </div>
-            <p class="desc" style="font-family: sans-serif; font-size: 0.9rem;"><br/>
-              Based on 41 Review</p>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
-  
+    
+   
+
+
+
+      <div *ngIf="starsRating">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="_product-detail-content-2">
+                  <p class="_p-name" style="color: white;">Over All Rating </p>
+                  <div id="full-stars-example-two">
+                     <div class="rating-group">
+                        <input disabled checked class="rating__input rating__input--none" name="rating3"
+                           id="rating3-none" value="0" type="radio">
+                        <label aria-label="1 star" class="rating__label" for="rating3-1"><i
+                              class="rating__icon rating__icon--star fa fa-star"></i></label>
+                        <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+                        <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
+                              class="rating__icon rating__icon--star fa fa-star"></i></label>
+                        <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+                        <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
+                              class="rating__icon rating__icon--star fa fa-star"></i></label>
+                        <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+                        <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
+                              class="rating__icon rating__icon--star fa fa-star"></i></label>
+                        <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+                        <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
+                              class="rating__icon rating__icon--star fa fa-star"></i></label>
+                        <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+                     </div>
+                     <p class="desc" style="font-family: sans-serif; font-size: 0.9rem;"><br />
+                        Based on 41 Review</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </ng-container>
+   <!-- skeleton loader code -->
+
+   <app-skeleton *ngIf="isLoading" [isBigSkull]=true></app-skeleton>
+
+   <!-- skeleton loader code ends here .. -->
+
 </section>

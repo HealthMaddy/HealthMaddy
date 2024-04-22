@@ -1,13 +1,86 @@
-<form class="form">
-    <h2>CONTACT US</h2>
-    <p type="First Name "> <input placeholder="Write your name here.." [(ngModel)]=" firstName"></p>
-    <p type="Last Name  "><input placeholder="Write your name here.." [(ngModel)]="LastName"></p>
+<form class="form" [formGroup]="inquiryForm" #form="ngForm"
+  (ngSubmit)="sendInquiry(inquiryForm.value, inquiryForm.valid)">
 
-    <p type="Email  "><input placeholder="Let us know how to email you back.." [(ngModel)]="email"></p>
-    <p type="Contact Number  "><input placeholder="Let us know how to contact you back.." [(ngModel)]="contactNo"></p>
+  <h2>CONTACT US</h2>
+  <p type="First Name "> <input type="text" placeholder="Write your first name here.." formControlName="firstName"
+      [class.is-invalid]="first_name.invalid && (first_name.dirty || first_name.touched)" required minlength="1"
+      maxlength="250" class="form-control form-control-sm">
 
-    <p type="Description  "><input placeholder="What would you like to tell us.." [(ngModel)]="Description"></p>
-    <button  class="btn_default_styl"(click)="sendMessage()">Send Message</button>
-    
-  </form>
-  
+
+    <span class="errorText"
+      *ngIf="first_name.invalid && (first_name.dirty || first_name.touched) &&first_name.errors?.['required']">
+      Please mention valid first name.
+    </span>
+
+
+  </p>
+  <p type="Last Name "> <input type="text" placeholder="Write your last name here.." formControlName="lastName"
+      [class.is-invalid]="last_name.invalid && (last_name.dirty || last_name.touched)" required minlength="1"
+      maxlength="250" class="form-control form-control-sm">
+
+
+    <span class="errorText"
+      *ngIf="last_name.invalid && (last_name.dirty || last_name.touched) &&last_name.errors?.['required']">
+      Please mention valid last name.
+    </span>
+
+
+  </p>
+
+  <p type="Email  ">
+    <input type="email" id="email_id" name="email_id" formControlName="email"
+      placeholder="Let us know how to email you back.." required minlength="1" maxlength="250"
+      class="form-control form-control-sm"
+      [class.is-invalid]="email_id.invalid && (email_id.dirty || email_id.touched)">
+
+    <span class="errorText"
+      *ngIf="email_id.invalid && (email_id.dirty || email_id.touched) && email_id.errors?.['required']">
+      Please mention your email.
+    </span>
+    <span class="errorText"
+      *ngIf="email_id.invalid && (email_id.dirty || email_id.touched) &&email_id.errors?.['minlength']">
+      This field must have at least 1 character.
+    </span>
+    <span class="errorText"
+      *ngIf="email_id.invalid && (email_id.dirty || email_id.touched) &&desc.errors?.['maxlength']">
+      This field must have at most 500 characters.
+    </span>
+    <span class="errorText"
+      *ngIf="email_id.invalid && (email_id.dirty || email_id.touched) &&desc.errors?.['maxlength']">
+      This field must have at most 500 characters.
+    </span>
+    <span class="errorText"
+      *ngIf="!email_id.errors?.['required'] && !email_id.errors?.['minlength'] && !email_id.errors?.['maxlength'] && email_id.errors?.['emailValidator']">
+      Please enter a valid email
+    </span>
+  </p>
+
+  <p type="Description  "> <textarea type="text" placeholder="What would you like to tell us.."
+      formControlName="description" [class.is-invalid]="desc.invalid && (desc.dirty || desc.touched)" required
+      minlength="1" maxlength="500" class="form-control form-control-sm" rows="4">
+</textarea>
+
+    <span class="errorText" *ngIf="desc.invalid && (desc.dirty || desc.touched) &&desc.errors?.['required']">
+      Please mention some description.
+    </span>
+    <span class="errorText" *ngIf="desc.invalid && (desc.dirty || desc.touched) &&desc.errors?.['minlength']">
+      This field must have at least 1 character.
+    </span>
+    <span class="errorText" *ngIf="desc.invalid && (desc.dirty || desc.touched) &&desc.errors?.['maxlength']">
+      This field must have at most 500 characters.
+    </span>
+
+
+  </p>
+
+
+  <button *ngIf="!isLoading" type="submit" class="btn_default_styl">
+    Send Message
+  </button>
+  <button *ngIf="isLoading" class="btn_default_styl col-4" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button>
+
+
+</form>
