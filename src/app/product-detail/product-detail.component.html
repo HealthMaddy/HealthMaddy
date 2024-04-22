@@ -96,8 +96,9 @@
 
                      <!-- flavours dropdown -->
                      <div class="_p-features" style="color: white;">
-                        <span style="color: white;"> Description About this product:- </span>
-                        {{product?.description }}
+                        <span style="color: white;"> Description About this product: </span>
+                        <br>
+                        <div [innerHtml]="product?.description"></div>
                      </div>
                      <form action="" method="post" accept-charset="utf-8">
                         <ul class="spe_ul"></ul>
@@ -131,8 +132,8 @@
             </div>
          </div>
       </div>
-    
-   
+
+
 
 
 

@@ -15,21 +15,21 @@ export class ProductSectionComponent implements OnInit {
   //example product here..
   productFv: Product = {
     name: "Evil Series: Spell Pre Workout",
-    description: `Experience the Power of Evil Series Spell Pre-Workout!
+    description: `Experience the Power of Evil Series Spell Pre-Workout!<br><br>
 
-    Are you ready to supercharge your workouts like never before? Say hello to Spell Pre-Workout from Evil Series – your ultimate companion for dominating the gym and achieving your fitness goals.
+    Are you ready to supercharge your workouts like never before? Say hello to Spell Pre-Workout from Evil Series – your ultimate companion for dominating the gym and achieving your fitness goals.<br><br>
     
-    Crafted with precision and care, Spell Pre-Workout is designed to elevate every aspect of your workout routine. With our potent Muscle Fuel Blend, featuring Beta-Alanine, Creatine Monohydrate, and Creatine HCL, your muscles will be primed for peak performance and explosive strength.
+    Crafted with precision and care, Spell Pre-Workout is designed to elevate every aspect of your workout routine. With our potent Muscle Fuel Blend, featuring Beta-Alanine, Creatine Monohydrate, and Creatine HCL, your muscles will be primed for peak performance and explosive strength.<br><br>
     
-    But we didn't stop there. Our Blood Flow Amplifier Blend, packed with L-Citrulline and L-Arginine, ensures optimal circulation, delivering essential nutrients and oxygen to your muscles for an unbeatable pump and endurance.
+    But we didn't stop there. Our Blood Flow Amplifier Blend, packed with L-Citrulline and L-Arginine, ensures optimal circulation, delivering essential nutrients and oxygen to your muscles for an unbeatable pump and endurance.<br><br>
     
-    And let's talk focus. Our Mind Control Matrix, powered by Caffeine Anhydrous and Vitamin B3, sharpens your mental clarity and boosts your mood, so you can stay locked in and crush your goals.
+    And let's talk focus. Our Mind Control Matrix, powered by Caffeine Anhydrous and Vitamin B3, sharpens your mental clarity and boosts your mood, so you can stay locked in and crush your goals.<br><br>
     
-    But what sets Spell Pre-Workout apart is its versatility. Whether you're a seasoned gym-goer or just starting out, our formula is designed to meet you where you are. Beginners can ease in with half a scoop and still experience the magic.
+    But what sets Spell Pre-Workout apart is its versatility. Whether you're a seasoned gym-goer or just starting out, our formula is designed to meet you where you are. Beginners can ease in with half a scoop and still experience the magic.<br><br>
     
-    Safety is our priority. Spell Pre-Workout is intended for healthy adults aged 18 and above. As always, consult your healthcare professional before use, especially if you have any medical conditions or sensitivities.
+    Safety is our priority. Spell Pre-Workout is intended for healthy adults aged 18 and above. As always, consult your healthcare professional before use, especially if you have any medical conditions or sensitivities.<br><br>
     
-    Ready to unleash the Spell? Simply mix one scoop with water 10 to 20 minutes before your workout, and get ready to redefine your limits.
+    Ready to unleash the Spell? Simply mix one scoop with water 10 to 20 minutes before your workout, and get ready to redefine your limits.<br><br>
     
     Join the Evil Series community and elevate your fitness journey today. With Spell Pre-Workout by your side, there's no challenge you can't conquer. Experience the power of Evil Series Spell Pre-Workout – where strength meets success.`,
 
