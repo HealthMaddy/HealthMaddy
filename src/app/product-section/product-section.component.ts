@@ -131,6 +131,6 @@ export class ProductSectionComponent implements OnInit {
   }
 
   redirectToDetailPage(product: any) {
-    this.router.navigate(["/product-detail", product.id]);
+    this.router.navigate(["/product", product.id]);
   }
 }
