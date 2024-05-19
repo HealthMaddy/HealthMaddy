@@ -932,8 +932,8 @@ a:focus {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(6, 10, 54, 0.8)), to(rgba(6, 10, 54, 0.8))), url(./assets/images/banner1.png);
-  background-image: linear-gradient(to right, rgba(6, 10, 54, 0.8), rgba(6, 10, 54, 0.8)), url(./assets/images/banner3.png);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(6, 6, 7, 0.8)), to(rgba(0, 0, 0, 0.8))), url(./assets/images/banner1.png);
+  background-image: linear-gradient(to right, rgba(3, 3, 3, 0.8), rgba(2, 2, 2, 0.8)), url(./assets/images/banner3.png);
   background-size: cover;
   background-position: bottom;
 }
@@ -1110,6 +1110,7 @@ a:focus {
 
 .product_section .product_container .box .detail-box .p_price .old_price {
   text-decoration: line-through;
+  color: red;
 }
 
 .product_section .product_container .box .detail_bottom {
@@ -1471,7 +1472,7 @@ a:focus {
 
 .info_section .contact_items a h6 {
   color: #ffffff;
-  margin: 0;
+  margin-left: 6px;
 
 }
 
@@ -1549,7 +1550,12 @@ a:focus {
     background-color: red !important;
     border-color: red !important;
   }
+
 }
+
+
+
+
 
 /*  */
 html,

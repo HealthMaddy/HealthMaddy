@@ -2,13 +2,13 @@
 <header class="header_section" style="background-color:black;">
   <div class="" style="padding: 0 1% 0 1%;">
     <nav class="navbar navbar-expand-lg custom_nav-container ">
-      <a href="index.html">
-        <div  style=" line-height: 1;   text-align: center;">
-          <img class="logoImage" src="./../../assets/svg/logo.svg">
+      <a routerLink="/home">
+        <div style=" line-height: 1;   text-align: center;">
+          <img class="logoImage" src="assets/svg/logo.svg">
 
           <!-- logo code starts here  -->
 
-          
+
           <!-- logo code ends here  -->
         </div>
       </a>
@@ -21,46 +21,47 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
           <ul class="navbar-nav">
-            <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
               <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" (click)="navigateToAboutPage()"> About</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="router-link-active"
+                (click)="navigateToAboutPage()"> About</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="/products">Products</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/why">Why Us</a>
+              <a class="nav-link" routerLink="/why-us">Why Us</a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
+            <!-- <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="/footer">Testimonial</a>
-            </li>
+            </li> -->
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/Contact">Contact Us</a>
+              <a class="nav-link" routerLink="/contact-us">Contact Us</a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
+            <!-- <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="/Cart">Cart</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
+            </li> -->
+            <!-- <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="/Checkout">CheckoutForm</a>
             </li> -->
-          
+
           </ul>
         </div>
 
-        <div class="quote_btn-container">
+        <!-- <div class="quote_btn-container">
 
-            <!-- <i class="fas fa-user-tie"(click)="goTologin()" ></i> -->
-          <!-- <a href="">
+            <i class="fas fa-user-tie"(click)="goTologin()" ></i>
+          <a href="">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
-          </a> -->
-          <!-- <form class="form-inline">
+          </a>
+          <form class="form-inline">
             <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
-          </form> -->
-        </div>
+          </form>
+        </div> -->
       </div>
     </nav>
   </div>

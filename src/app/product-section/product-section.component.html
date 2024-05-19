@@ -1,36 +1,75 @@
+<!-- <app-media filePath="Product"></app-media> -->
+<hr>
 <section class="product_section layout_padding">
   <div class="container">
     <div class="heading_container heading_center">
-      <h2>New products</h2>
+      <h2>OUR PRODUCTS</h2>
     </div>
+
     <div class="product_container">
-      <div class="row">
+      <div class="row" *ngIf="!isLoading">
+
         <div class="col-sm-6 col-md-4" *ngFor="let product of products">
           <div class="box">
             <div class="img-box">
-              <img [src]="product.imgSrc" alt="">
+              <img [src]="productService.getPrimaryProductImage(product?.['media'])" alt="">
             </div>
             <div class="detail-box" style=" background-color: #101010;">
-              <span class="p_rating">
+              <!-- <span class="p_rating">
                 <a href="" *ngFor="let star of [1, 2, 3, 4, 5]">
                   <i class="fa fa-star" aria-hidden="true"></i>
                 </a>
-              </span>
-              <a [routerLink]="['/product-detail', product.id]" class="p_name">{{ product.name }}</a>
+              </span> -->
+              <a [routerLink]="['/product', product.id]" class="p_name">{{ product.name }}</a>
 
-              <h6 class="p_price">
-                <span class="new_price">$ {{ product.newPrice }}</span>
-                <span class="old_price">$ {{ product.oldPrice }}</span>
-              </h6>
-              <button  type="button" class="btn btn-success" (click)="redirectToDetailPage(product)">View</button>
+              <h3>
+
+                <div innerHtml="{{product.description | truncate:20}}"></div>
+
+              </h3>
+
+              <h3 class="p_price">
+                <span class="new_price"> {{ product.discountPrice| currency: product.currency }}</span>
+                <span class="old_price"> {{ product.originalPrice | currency: product.currency}}</span>
+              </h3>
+              <button type="button" class="btn btn-success btn_default_styl float-right w-100"
+                (click)="redirectToDetailPage(product)">View</button>
 
             </div>
           </div>
         </div>
+        <!-- more to come soon code -->
+
+        <div class="col-sm-6 col-md-4">
+          <div class="box coming-soon-box">
+
+            <div class="detail-box coming-soon-detail-box">
+
+              <span>More Products <br> Coming Soon...</span>
+
+              <h3>
+
+
+              </h3>
+
+
+
+
+            </div>
+          </div>
+        </div>
+        <!-- more to come soon code ends here -->
       </div>
+      <!-- skeleton loader code -->
+      <div class="row" *ngIf="isLoading">
+        <div class="col-sm-6 col-md-4" *ngFor="let p of [1,2,3,4,5,6]">
+          <app-skeleton></app-skeleton>
+        </div>
+      </div>
+      <!-- skeleton loader code ends here .. -->
     </div>
-    <div class="btn-box">
-      <a   class="btn_default_styl"href="">See More</a>
+    <div *ngIf="showFewProducts &&  products.length ==6" class="btn-box">
+      <a class="btn_default_styl" [routerLink]="['/products']">See More</a>
     </div>
   </div>
 </section>

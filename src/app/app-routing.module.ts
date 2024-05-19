@@ -18,10 +18,10 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'about', component: AboutSectionComponent },
   { path: 'products', component: ProductSectionComponent },
-  { path: 'product-detail/:id', component: ProductDetailComponent }, // Route for the product detail page
-  { path: 'why', component: WhyUsSectionComponent },
+  { path: 'product/:id', component: ProductDetailComponent }, // Route for the product detail page
+  { path: 'why-us', component: WhyUsSectionComponent },
   { path: 'footer', component: FooterSectionComponent },
-  { path: 'Contact', component: ContactUsFormComponent },
+  { path: 'contact-us', component: ContactUsFormComponent },
   { path: 'Cart', component:CartPageComponent },
   { path: 'Checkout', component:CheckoutFormComponent }
   
