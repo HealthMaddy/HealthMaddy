@@ -18,24 +18,23 @@
         </h4>
         <div class="contact_items">
 
-          <a>
-            <div   class="img-box">
-              <i  class="fa fa-envelope" aria-hidden="true"></i>
+          <a class="disablePointer">
+            <div class="img-box">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
             </div>
-            <h6 class="font-size"
-             >
+            <h6 class="font-size">
               support@healthmaddy.com
             </h6>
           </a>
-          <a>
-            <div  class="img-box">
+          <a class="disablePointer">
+            <div class="img-box">
               <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i>
             </div>
             <h6 class="font-size">
               (+91 8660690712)
             </h6>
           </a>
-          <a>
+          <a class="disablePointer">
             <div class="img-box">
               <i class="fa fa-phone" aria-hidden="true"></i>
             </div>
@@ -50,21 +49,21 @@
     <div class="box">
       <div class="info_social ">
         <div>
-          <a href="">
+          <a [href]="socialMediaHandles.facebook" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
         </div>
-
         <div>
-          <a href="">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div>
-          <a href="">
+          <a [href]="socialMediaHandles.instagram" target="_blank">
             <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
         </div>
+        <div>
+          <a [href]="socialMediaHandles.twitter" target="_blank">
+            <i class="fab fa-twitter" aria-hidden="true" aria-label="twitter"></i>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>

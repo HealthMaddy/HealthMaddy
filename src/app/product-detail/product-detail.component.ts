@@ -18,6 +18,9 @@ export class ProductDetailComponent implements OnInit {
   // Initialize quantity to 1
   total: number | undefined;
   isLoading = false;
+
+  productExternalLink = "";
+
   constructor(
     private route: ActivatedRoute,
     public productService: ProductListService
@@ -29,6 +32,10 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  onFlavourSelectionChange(event: any) {
+    this.productExternalLink = event?.target?.value || null;
+  }
+
   async getProductDetail(productId: string) {
     try {
       this.isLoading = true;
@@ -36,6 +43,8 @@ export class ProductDetailComponent implements OnInit {
       this.productPrimaryMedia = this.productService.getPrimaryProductImage(
         this.product?.media
       );
+
+      this.productExternalLink = this.product?.thirdPartyProductLink;
       console.log("product --", this.product);
       this.calculateTotal();
     } catch (e) {

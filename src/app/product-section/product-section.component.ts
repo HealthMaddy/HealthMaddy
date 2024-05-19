@@ -13,7 +13,7 @@ export class ProductSectionComponent implements OnInit {
   isLoading = false;
   @Input("showFewProducts") showFewProducts: boolean = false;
   //example product here..
-  productFv: Product = {
+/*   productFv: Product = {
     name: "Evil Series: Spell Pre Workout",
     description: `Experience the Power of Evil Series Spell Pre-Workout!<br><br>
 
@@ -62,24 +62,24 @@ export class ProductSectionComponent implements OnInit {
     ],
     stock: [
       {
-        flavourName: "Pina Colada",
-        stockAvailableCount: 20,
-      },
-      {
         flavourName: "Watermelon",
-        stockAvailableCount: 20,
+        stockAvailableCount: 24,
+        externalLink: "https://www.amazon.in/dp/B0D325CNZY",
       },
       {
         flavourName: "Gummy Candy",
-        stockAvailableCount: 20,
+        stockAvailableCount: 24,
+        externalLink: "https://www.amazon.in/dp/B0D3256HQ7",
       },
       {
         flavourName: "Litchi",
-        stockAvailableCount: 20,
+        stockAvailableCount: 24,
+        externalLink: "https://www.amazon.in/dp/B0D32533MG",
       },
       {
-        flavourName: "Blue Berry",
-        stockAvailableCount: 16,
+        flavourName: "Mix Berries",
+        stockAvailableCount: 24,
+        externalLink: "https://www.amazon.in/dp/B0D32448TM",
       },
     ],
     originalPrice: "2699",
@@ -93,13 +93,13 @@ export class ProductSectionComponent implements OnInit {
 
     isInAppPurchaseAvailable: false,
     thirdPartyProductLink: "https://www.google.com/",
-  };
+  }; */
   products: Product[] = [];
   originalProductsCount = 0;
 
   ngOnInit() {
     console.log("is show few products here ...", this.showFewProducts);
-    this.getProductsList()
+    this.getProductsList();
     // this.productService.createProduct(productFv);
 
     // let img = await this.productService.uplaodFile(this.fileUrl);

@@ -10,6 +10,7 @@ export interface Product {
   stock: Array<{
     flavourName: string;
     stockAvailableCount: number;
+    externalLink: string;
   }>;
   originalPrice: string;
   discountPrice: string;

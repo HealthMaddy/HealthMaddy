@@ -29,9 +29,11 @@
                         <div>
                            weight: {{product?.weight}}{{product?.unit}}, {{product?.perContainerServing}} Servings
                         </div>
-                        <select class="form-select w-50 marginTB2" aria-label="Default select example">
-                           <option selected>Flavours</option>
-                           <option *ngFor="let flavour of product?.stock" value="flavour">{{flavour?.flavourName}}
+                        <select class="form-select w-50 marginTB2" aria-label="Default select example"
+                           (change)="onFlavourSelectionChange($event)">
+                           <!-- <option selected>Flavours</option> -->
+                           <option *ngFor="let flavour of product?.stock" value="{{flavour?.externalLink}}">
+                              {{flavour?.flavourName}}
                            </option>
                         </select>
                         <div class="_p-features" style="color: white;">
@@ -49,7 +51,7 @@
                                     Amazon</button>
                               </div>
                               <div class="_p-add-cart" *ngIf="!product?.isInAppPurchaseAvailable">
-                                 <a target="_blank" [href]="product?.thirdPartyProductLink">
+                                 <a target="_blank" [href]="productExternalLink">
                                     <button type="button" class="btn btn-success btn_default_styl float-right w-100">Buy
                                        On Amazon</button>
                                  </a>
